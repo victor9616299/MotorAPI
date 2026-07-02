@@ -1,11 +1,1 @@
-{
-  "Version": 1,
-  "Hash": "kyeab5fZTK0QjFEJOjAi230SsW7Czi1zK+DQyhodRYI=",
-  "Source": "procafeiro",
-  "BasePath": "_content/procafeiro",
-  "Mode": "Default",
-  "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
-}
+{"Version":1,"Hash":"9qOgQ88uKLDmOmwczwPcsHZrjyfY5dVKNmFDmMo/eso=","Source":"MotorAPI","BasePath":"/","Mode":"Root","ManifestType":"Build","ReferencedProjectsConfiguration":[],"DiscoveryPatterns":[],"Assets":[],"Endpoints":[]}

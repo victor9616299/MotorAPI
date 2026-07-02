@@ -1,34 +1,43 @@
 using DataAccess.Repositorios.Contratos;
 using Dominio;
+
 namespace DataAccess.Repositorios
 {
-    public class PanhaRepositorio : IPanhaRepositorio
+    public class MotorRepositorio : IMotorRepositorio
     {
         private readonly Contexto _contexto;
 
-        public PanhaRepositorio(Contexto contexto)
+        public MotorRepositorio(Contexto contexto)
         {
             _contexto = contexto;
         }
 
-        public void AdicionarPanha(Panha panha)
+        public Motor ObterPorId(int motorID)
         {
-            _contexto.Panha.Add(panha);
+            return _contexto.Motores.FirstOrDefault(motor => motor.IdMotor == motorID);
+        }
+
+        public void AdicionarMotor(Motor motor)
+        {
+            _contexto.Motores.Add(motor);
             _contexto.SaveChanges();
         }
-        public void AtualizarPanha(Panha panha)
+
+        public void AtualizarMotor(Motor motor)
         {
-            _contexto.Panha.Update(panha);
+            _contexto.Motores.Update(motor);
             _contexto.SaveChanges();
         }
-        public void RemoverPanha(Panha panha)
+
+        public void RemoverMotor(Motor motor)
         {
-            _contexto.Panha.Remove(panha);
+            _contexto.Motores.Remove(motor);
             _contexto.SaveChanges();
         }
-        public IEnumerable<Panha> ListarTodos()
+
+        public IEnumerable<Motor> ListarTodos()
         {
-            return _contexto.Panha.ToList();
+            return _contexto.Motores.ToList();
         }
     }
 }

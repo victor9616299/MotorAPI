@@ -5,7 +5,7 @@ namespace DataAccess;
 
 public class Contexto : DbContext
 {
-    public DbSet<Panha> Panha {get; set;}
+    public DbSet<Motor> Motores { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
@@ -16,7 +16,6 @@ public class Contexto : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.ApplyConfiguration(new PanhaConfiguration());
+        modelBuilder.ApplyConfiguration(new MotorConfiguration());
     }
 }
-    
