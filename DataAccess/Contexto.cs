@@ -5,17 +5,16 @@ namespace DataAccess;
 
 public class Contexto : DbContext
 {
-    public DbSet<Motor> Motores { get; set; }
-
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+    public Contexto(DbContextOptions<Contexto> options)
+        : base(options)
     {
-        optionsBuilder.UseSqlServer(
-            "Server=localhost,1433;Database=DbProCafeiro;User ID=Sa; Password=Senha@123;Encrypt=False;TrustServerCertificate=True;"
-        );
     }
 
+    public DbSet<Motor> Motores { get; set; }
+    public DbSet<Sensor> Sensores { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new MotorConfiguration());
+        modelBuilder.ApplyConfiguration(new SensorConfiguration());
     }
 }
